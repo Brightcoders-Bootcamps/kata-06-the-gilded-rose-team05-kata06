@@ -12,7 +12,7 @@ class GildedRose
   end 
 
   def update_quality(item, update)
-    if item.quality == 0
+    if item.quality == 0 && update.negative?()
       0
     elsif item.quality == 50
       50
@@ -28,17 +28,17 @@ class GildedRose
   end
 
   def update_item(item)
-    if item.name != "Sulfuras, Hand of Rangnaros"
-      if item.name != "Aged Brie" && item.name != "Backstage passes to a TAFKAL80ETC concert"
+    if item.name != 'Sulfuras, Hand of Ragnaros'
+      if item.name != 'Aged Brie' && item.name != 'Backstage passes to a TAFKAL80ETC concert'
         item.quality = update_quality(item,-1)
-        item.quality = update_quality(item, -1) if item.sell_in < 0
+        item.quality = update_quality(item,-1) if item.name == 'Conjured Mana Cake'
+        item.quality = update_quality(item, -1) if item.sell_in < 0 && item.name != 'Conjured Mana Cake'
       else
-        if item.name == "Backstage passes to a TAFKAL80ETC concert"
+        if item.name == 'Backstage passes to a TAFKAL80ETC concert'
+          item.quality = update_quality(item,+1) if item.sell_in > 10
           item.quality = update_quality(item,+2) if item.sell_in <= 10
           item.quality = update_quality(item,+1) if item.sell_in <= 5
           item.quality = udate_quality(item,0) if item.sell_in < 0
-        elsif item.name == "Conjured Mana Cake"
-          item.quality = update_quality(item,-2)
         else
           item.quality = update_quality(item,+1)
         end
