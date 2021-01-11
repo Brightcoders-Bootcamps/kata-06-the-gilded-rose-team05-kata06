@@ -30,4 +30,3 @@ gilded_rose = GildedRose.new items
   puts ''
   gilded_rose.update
 end
-

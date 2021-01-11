@@ -2,10 +2,10 @@
 
 source 'https://rubygems.org'
 
-gem 'rubocop'
+gem 'rake'
 gem 'rspec'
 gem 'rspec-expectations'
-gem 'sandi_meter'
-gem 'rake'
+gem 'rubocop'
 gem 'rubycritic', require: false
-gem 'rubycritic-small-badge', :require => false
+gem 'rubycritic-small-badge', require: false
+gem 'sandi_meter'

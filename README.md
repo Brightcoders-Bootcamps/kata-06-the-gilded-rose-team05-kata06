@@ -1,3 +1,5 @@
+![rubycriticBadges](badges/rubycritic_badge_score.svg)
+
 ![BrightCoders Logo](img/logo-bc.png)
 
 # Kata Gilded Rose Refactoring
